@@ -1,0 +1,933 @@
+@charset "UTF-8";
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset, img, input, button { 			/*fieldset组合表单中的相关元素*/
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline-style: none;
+}
+
+ul, ol {
+    list-style: none;				/*清除列表风格*/
+}
+
+input {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: "SimSun", "宋体";
+}
+
+select, input {
+    vertical-align: middle;
+}
+
+select, input, textarea {
+    font-size: 12px;
+    margin: 0;
+}
+
+textarea {
+    resize: none;
+}
+
+/*防止多行文本框拖动*/
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+/*  去掉图片低测默认的3像素空白缝隙*/
+table {
+    border-collapse: collapse;			/*合并外边线*/
+}
+
+
+body {
+    font: 14px/150% Arial, Verdana, "\5b8b\4f53";	/*宋体，Unicode，统一码*/
+    color: #666;
+    background: #ffffce !important;
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1; /*IE/7/6*/
+}
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #C81623;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 100%;
+}
+
+s, i, em {
+    font-style: normal;
+    text-decoration: none;
+}
+@font-face {
+    font-family: 'iconfont';  /* project id 885469 */
+    src: url('//at.alicdn.com/t/font_885469_0opfjwpg3v8.eot');
+    src: url('//at.alicdn.com/t/font_885469_0opfjwpg3v8.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_885469_0opfjwpg3v8.woff') format('woff'),
+    url('//at.alicdn.com/t/font_885469_0opfjwpg3v8.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_885469_0opfjwpg3v8.svg#iconfont') format('svg');
+}
+.iconfont
+{
+    font-family:"iconfont" !important;
+    font-size:16px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.col-red {
+    color: #C81623 !important;
+}
+.w {
+    width:1000px;
+    margin:0 auto;
+}
+.top {
+    width:100%;
+    height:50px;
+    background-color: black;
+}
+.top-left {
+    float:left;
+    height:50px;
+}
+.top-left span {
+    display:block;
+    height:50px;
+    color:#FFD704;
+    line-height:50px;
+}
+.top-right {
+    height : 50px;
+    float:right;
+}
+.top-right {
+    height : 50px;
+    line-height:50px;
+}
+.top-right li {
+    float:left;
+
+}
+.top-right a{
+    margin-left:10px;
+    color:white;
+}
+.top-right i {
+    margin-left:10px;
+
+}
+.space {
+    width:1px;
+    height:16px;
+    margin:18px 0px 0px 15px;
+    background-color: #FFD704;
+}
+
+
+/* 头部导航栏部分结束;PO4 */
+
+.header{
+    height: 140px;
+    position: relative;
+}
+.header .log{
+    position: absolute;
+    left:75px;
+    top:40px;
+    height: 170px;
+    line-height:50px;
+    font-size:40px;
+    width: 280px;
+    cursor: pointer;
+}
+.log img{
+    height: 170px;
+    width: 280px;
+}
+.header-search {
+    height: 75px;
+    position: relative;
+    background: url("image/search_bg2_e0bf5f7.png");
+
+}
+.header-form {
+    position: absolute;
+    left:160px;
+    top: 40px;
+    width: 900px;
+    height: 35px;
+}
+.text-form {
+    width: 500px;
+    height: 35px;
+    float: left;
+    vertical-align: top;
+    position: relative;
+}
+.text-form  input {
+    width: 500px;
+    height: 33px;
+    border: none;
+    line-height: 33px;
+    font-size: 14px;
+    color: #989898;
+    text-align: left;
+    position: relative;
+}
+.text-form span {
+    position: absolute;
+    line-height: 33px;
+    left:6px;
+    top:1px;
+}
+.text-form i {
+    position: absolute;
+    right: 10px;
+    height: 33px;
+    top:1px;
+    font-size: 23px;
+    line-height:33px;
+}
+.header-form button{
+    border: none;
+    background-color: #e33333;
+    vertical-align: top;
+    width: 50px;
+    height: 35px;
+    float: left;
+    color: white;
+    font-size: 23px;
+}
+.head-car {
+    width:190px;
+    height:35px ;
+    float: right;
+    color: red;
+    margin-right: 100px;
+    background-color: white;
+}
+.middel-car {
+    position: relative;
+    padding: 5px 0 0 50px;
+}
+.middel-car span{
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    background-color:red;
+    border-radius: 50%;
+    color: white;
+    right: 44px;
+    top:0;
+    line-height: 16px;
+    text-align: center;
+}
+/* 搜索框部分完成 */
+.top_img {
+    height: 315px;
+    width:100%;
+}
+.img-left {
+    float:left;
+    height:315px;
+    width: 750px;
+    position: relative;
+    overflow: hidden;
+}
+.left-square {
+    position: absolute;
+    bottom:10px;
+    right:10px;
+    height:30px;
+    z-index: 2;
+}
+.left-square ul{
+    height:30px;
+}
+.left-square li {
+    display:block;
+    float: left;
+    width:20px;
+    height: 20px;
+    background-color: #ffffce;
+    text-align: center;
+    line-height: 20px;
+    margin-left:8px;
+    border-radius: 50%;
+}
+.left-center {
+    width: 750px;
+    height:315px;
+    /*position: relative;*/
+}
+.left-center ul {
+    width: 700%;
+    height:315px ;
+    position: absolute;
+    left:0;
+}
+.left-center li{
+    width: 750px;
+    height:315px;
+    float: left;
+}
+.img-right {
+    float: right;
+    width: 220px;
+    height: 315px;
+    margin-left: 4px;
+    border: 1px solid #999;
+    background: url("image/search_bg2_e0bf5f7.png") 876px repeat;
+    background-color: white;
+}
+.img-right span {
+    display: block;
+    width: 185px;
+    height: 20px;
+    margin: 20px auto;
+    font: 700 20px/40px "微软雅黑";
+}
+.right-content {
+    width: 220px;
+    height: 60px;
+    padding-left: 22px;
+}
+.store-content {
+    display: block;
+    padding:10px 0 0  20px;
+    width: 105px;
+    line-height: 20px;
+
+}
+
+
+/*中间轮播图部分结束*/
+.new {
+    margin-top: 30px;
+    width: 100%;
+    height: 40px;
+}
+.new-book {
+    float: left;
+}
+.fashion-book {
+    float: right;
+    margin-right: 100px;
+}
+.new .spaces{
+    display: inline-block;
+    width: 4px;
+    height: 20px;
+    background-color: orangered;
+}
+.new span {
+    display: inline-block;
+    margin-left: 4px;
+    height: 20px;
+    font: 700 20px/20px "微软雅黑";
+}
+/*中间新书那一部分结束*/
+.top-banner {
+    margin-top: 10px;
+    height: 324px;
+
+}
+.banner-left {
+    float: left;
+    width: 720px;
+    height: 324px;
+    overflow: hidden;
+    background-color: white;
+    border: 1px  dashed #666;
+}
+.banner-nav,.banner-navs {
+    width: 720px;
+    height: 30px;
+    padding-top: 10px;
+}
+.banner-nav li,.banner-navs li{
+    width: 30px;
+    height: 30px;
+    float: left;
+    cursor: pointer;
+    padding: 0 20px 0 20px;
+}
+.main {
+    display: none;
+    overflow: hidden;
+    width: 724px;
+    height:284px;
+    margin-top: 25px;
+}
+.book {
+    width: 169px;
+    margin:30px 0 0 10px;
+    height: 224px;
+    float: left;
+    border-right: 1px solid #666;
+}
+.book:last-child{
+    border:0;
+}
+.book-name {
+    /*margin-top: 5px;*/
+    display: block;
+    width:160px;
+    /*height: 20px;*/
+    /*text-align:center;*/
+    line-height: 20px;
+}
+.bookprice {
+    /*height: 20px;*/
+    width: 170px;
+    /*margin-top: 30px;*/
+    line-height: 20px;
+    text-align: center;
+}
+.bookprice .price {
+    color: red;
+    font: 18px/20px  '微软雅黑' ;
+    /*margin-right: 10px;*/
+}
+.book .insert-car {
+    width:10rem;
+    height: 3rem;
+    border: 0;
+    outline: 0;
+    color:white;
+    font: 16px '微软雅黑';
+    line-height:3rem;
+    /*margin-left: 2rem;*/
+    background-color: #da6173;
+}
+.active{
+    border-bottom: 4px solid orangered;
+}
+
+.selected {
+    display: block;
+}
+.banner-right {
+    float: left;
+    width: 250px;
+    height: 324px;
+    overflow: hidden;
+    margin-left:26px;
+    background-color: white;
+    border: 1px  dashed #666;
+}
+.banner-book {
+    padding: 10px 10px;
+    width: 250px;
+    height:284px;
+}
+.topnum-book  {
+    margin: 5px;
+    width: 240px;
+    height:274px;
+}
+.topnum-book li {
+    width: 200px;
+    border-bottom: 1px solid #666;
+}
+.topnum-book span {
+    width: 250px;
+    height:40px;
+    cursor: pointer;
+    line-height: 40px;
+    padding-left: 20px;
+}
+ .bookRank {
+     width: 250px;
+     height:120px;
+     position: relative;
+     display: none;
+}
+.bookImgg {
+    padding: 20px 20px;
+}
+
+.bookImgg img{
+    width:60px;
+}
+.bookRank i{
+    position: absolute;
+    left:130px;
+    top:20px;
+}
+.middle-bann {
+    width: 100%;
+    height: 55px;
+    margin: 40px auto;
+
+}
+.middle-bann-nav {
+    position: relative;
+    padding-left: 20px;
+}
+.middle-bann-nav ul {
+    position: absolute;
+}
+.middle-bann-nav li {
+    width: 206px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+    margin-left: 20px;
+    border-radius: 6px 36px 36px 6px;
+    background-color: white;
+}
+.middle-bann-nav .select {
+    color: white;
+    background-color:red;
+}
+.line {
+    width: 100%;
+    height: 3px;
+    background-color: orangered;
+}
+.car {
+    height: 20px;
+}
+.car-nav {
+    height: 36px;
+    margin-top: 30px;
+}
+.car-nav li {
+    float: left;
+}
+.car-nav .f1 {
+    width: 202px;
+    height: 36px;
+}
+.car-nav .f2 {
+    width: 280px;
+    height: 36px;
+}
+.car-nav .f3 {
+    width: 130px;
+    height: 36px;
+}
+.car-nav .f4 {
+    width: 130px;
+    height: 36px;
+}
+.car-nav .f5 {
+    width: 130px;
+    height: 36px;
+}
+.car-nav .f6 {
+    width: 70px;
+    height: 36px;
+}
+.square,#square {
+    vertical-align: center;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid red;
+    border-radius: 2px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+.actives {
+    background-color: red;
+    color: white;
+}
+
+.car-content {
+    float: left;
+    padding: 20px;
+    line-height: 120px;
+}
+
+.car-menu {
+    border: 1px solid #666;
+}
+.car-menu tr {
+    background-color: white;
+    height: 120px;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #666;
+}
+.car-menu td {
+    text-align: left;
+    vertical-align: top;
+}
+.shops-name  {
+    width: 50px;
+    height: 20px;
+}
+.shops-name i{
+ margin-left: 20px;
+}
+.shops-img {
+    width: 100px;
+    height: 20px;
+
+}
+.shops-message {
+    width: 310px;
+    height: 20px;
+    text-align: left;
+    line-height: 20px;
+    padding: 40px 0 0 10px;
+}
+.shops-message span:nth-child(1){
+    text-align: left;
+    margin-top: 10px;
+    line-height: 20px;
+}
+.shops-message span:nth-child(2){
+    width: 1900px;
+    padding:10px;
+    height: 10px;
+    text-align: left;
+    overflow: hidden;
+    line-height: 20px;
+}
+.car-content .shops-price {
+    text-align: left;
+    width: 130px;
+    height: 20px;
+}
+.car-content .shops-num  {
+    text-align: left;
+    width: 132px;
+    height: 20px;
+    line-height: 120px;
+}
+.shops-num .left-add,
+.shops-num .right-jian,
+.shops-num input{
+    float: left;
+    display: inline-block;
+    line-height: 22px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    margin:45px 0 0  -1px;
+    border: 1px solid #666;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.car-content .shops-sum  {
+    text-align: left;
+    width: 132px;
+    height: 20px;
+}
+.car-content .shops-do {
+    text-align: left;
+    width: 100px;
+    height: 20px;
+}
+.shops-do button {
+    color: #666;
+    padding: 10px;
+    background-color: #c3c2b7;
+}
+/*图书购物车部分完成*/
+.all-shops {
+  height: 70px;
+    background: url("image/shopping_total.png") no-repeat;
+}
+.fix {
+    position: fixed;
+    bottom: 10px;
+}
+.shops-settle-left {
+    float: left;
+    width: 445px;
+    height: 58px;
+    line-height: 58px;
+    padding-left: 75px;
+}
+.shops-settle-right {
+    float: left;
+    width: 430px;
+    height: 50px;
+    line-height: 58px;
+    margin-top: 14px;
+    padding-left: 40px;
+}
+.shops-settle-right input {
+    margin: -10px 0 0 135px;
+    width: 150px;
+    height: 40px;
+    color: #666;
+    background-color: #c3c2b7
+}
+/*
+
+*/
+/*记录书的界面*/
+
+.book-banner-nav {
+    width: 100%;
+}
+.book-banner-nav .banner-nav {
+    width: 100%;
+}
+.book-banner-nav .banner-nav li {
+    width: auto;
+    padding-left: 10rem;
+}
+.all-books {
+    width: 100%;
+    margin-top :40px;
+}
+.all-books .book {
+    /*padding-left: 40px;*/
+    width: 400px;
+    border: 1px dashed #666;
+    margin-left: 40px;
+}
+.all-books .book .book-img {
+    padding-top: 20px;
+    /*float: left;*/
+    width: 180px;
+    height: 180px;
+}
+.all-books .book .book-name {
+    /*padding-top: 20px;*/
+    /*float: left;*/
+    /*width: 200px;*/
+    width: 100%;
+    height: auto;
+    font: 700 18px/30px "Microsoft YaHei UI";
+}
+
+
+.all-books .book .bookauthor{
+    /*padding-top: 20px;*/
+    float: left;
+    /*width: 200px;*/
+    height: 30px;
+    font:  12px/30px "Microsoft YaHei UI";
+}
+.bookauthor:before {
+    content: "作者：";
+}
+.all-books .book .booksys {
+    overflow: hidden;
+    /*padding-top: 20px;*/
+    /*float: left;*/
+    /*width: 200px;*/
+    /*height: 60px;*/
+    text-overflow: ellipsis;
+    font: 14px/14px "Microsoft YaHei UI";
+}
+.booksys:before {
+    content: '  作品简介：';
+}
+
+.all-books .book  .bookprice {
+    text-align: left;
+    padding-top: 20px;
+    /*float: left;*/
+    /*width: 200px;*/
+    height:auto;
+    font: 700 18px/30px "Microsoft YaHei UI";
+}
+.line .space {
+    width: 100%;
+    height: 2px;
+    background-color: orangered;
+}
+.mian-book {
+    width: 100%;
+}
+.mian-book .books {
+    width: 100%;
+    position: relative;
+}
+.mian-book .book-img {
+    padding: 30px;
+    width: 300px;
+    height: 300px;
+}
+.book-img  img {
+    width: 100%;
+    height: 100%;
+}
+.mian-book  .book-name {
+    position: absolute;
+    top:70px;
+    left:420px;
+    font: 700 25px/30px "Microsoft YaHei UI";
+}
+.mian-book .bookauthor:before {
+    content: '(';
+}
+.mian-book .bookauthor {
+    vertical-align: bottom;
+    position: absolute;
+    top:76px;
+    left:485px;
+    font:  20px/30px "Microsoft YaHei UI";
+}
+.mian-book .bookauthor:after {
+    content: ')';
+}
+.mian-book .bookpublic {
+    position: absolute;
+    top: 128px;
+    left: 420px;
+    font: 14px/30px "宋体";
+}
+.mian-book .bookpublic:before {
+    content: "出版社：";
+}
+.mian-book .booktimer{
+    position: absolute;
+    top: 128px;
+    left: 640px;
+    font: 14px/30px "宋体";
+}
+.mian-book .booktimer:before {
+    content: "出版时间：";
+}
+.mian-book .booksys {
+    position: absolute;
+    top: 176px;
+    left: 416px;
+    font: 14px/30px "宋体";
+}
+.mian-book .bookprice {
+    width: 200px;
+    position: absolute;
+    top: 283px;
+    left: 416px;
+    font: 14px/30px "宋体";
+}
+.mian-book .bookprice i:nth-child(1):before{
+    content: "现价：";
+}
+.mian-book .bookprice del:nth-child(2):before{
+    content: "原价：";
+}
+.mian-book input {
+    cursor: pointer;
+    position: absolute;
+    top:310px;
+    left:900px;
+    width: 170px;
+    height: 80px;
+    color: white;
+    font: 700 20px/80px "SimSun";
+    background-color: #C81623;
+}
+.book-submit {
+    position: absolute;
+    padding-left:10px;
+    display:none;
+    top:262px;
+    border-radius:65px 100px 0 75px;
+    left:900px;
+    width:100px;
+    height:40px;
+    font:400 18px/40px "宋体";
+    border:1px solid pink;
+}
+.order-book {
+    vertical-align: bottom;
+    text-align: center;
+}
+.order-book tr {
+    width: 800px;
+    height: 100px;
+    background-color: white;
+    border: 1px dashed #666;
+}
+.order-book .shops-img {
+    width: 20%;
+    height: 100px;
+}
+.order-book .shops-img img {
+    height: 100px;
+}
+.order-book .shops-message {
+    padding: 0;
+    width: 20%;
+    height: 100px;
+
+}
+.order-book .shops-price{
+    width: 20%;
+    height: 100px;
+
+}
+.order-book .shops-num {
+    font-size: 18px;
+    text-align: left;
+    width: 20%;
+    height: 100px;
+
+}
+.order-book .shops-price {
+    font-size: 18px;
+    text-align: right;
+    width: 20%;
+    height: 100px;
+    padding-left: 20px;
+}
+.rec-message {
+    width: 100%;
+    margin-top: 20px;
+    height: 120px;
+    border: 1px dashed #666;
+    background-color: white;
+    margin-bottom: -2px;
+    padding-bottom: 20px;
+}
+.rec-message legend {
+    margin-left: 20px;
+    font: 700 20px/80px "Microsoft YaHei UI";
+}
+.rec-message input{
+    width: 200px;
+    height: 36px;
+    color: #666;
+    font:  16px/80px "Microsoft YaHei UI";
+    border: 1px solid #666;
+    background-color: white;
+}
+
+
+
+
+
+
+
+
+
+

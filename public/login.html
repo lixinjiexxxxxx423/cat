@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录界面</title>
+    <link href="./css/index.css" rel="stylesheet" type="text/css">
+    <style>
+        .top-banners {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            float: right;
+        }
+        .top-bann {
+            width: 100%;
+            height: 60px;
+            background-color: blanchedalmond;
+        }
+        .top-bann i {
+            color: red;
+            font-size: 40px;
+
+        }
+        .top-bann span {
+            font-size: 40px;
+            line-height: 60px;
+            padding-left: 40px;
+        }
+        .top-bann h1{
+            line-height: 60px;
+            float: right;
+            font-size: 16px;
+        }
+        .left  {
+            float: left;
+        }
+        .login-table {
+            position: absolute;
+            right:60px;
+            top:75px;
+        }
+        .login-table table {
+            width:530px;
+        }
+        input {
+            line-height: 20px;
+            width: 310px;
+            height: 36px;
+            border-radius: 4px;
+            font-size: 20px;
+            border: 1px solid #666;
+        }
+        button {
+            margin: 40px 0 0 0px;
+            width: 200px;
+            height: 36px;
+            border-radius: 26px;
+            border: 1px solid #666;
+            background-color: red;
+            font-size: 20px;
+            color: white;
+        }
+        td {
+            text-align: center;
+        }
+        .space {
+            display: inline-block;
+            width: 3px;
+            height: 16px;
+            background-color: orangered;
+            margin-right: 10px;
+        }
+        .login-name {
+            display: inline-block;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .clolor {
+           background-color:  #e7ffcc;
+        }
+    </style>
+</head>
+<body>
+<div class="top-banners">
+    <div class="top-bann">
+        <div class="w">
+            <i class="iconfont">&#xe6c6;</i>
+            <span>welcome!</span>
+            <h1>如果您尚未注册，请点击此
+                <a  style="color: red" href="#">注册</a>
+            </h1>
+        </div>
+    </div>
+    <div class="left">
+        <img src="image/booktree.png" alt="">
+    </div>
+    <div class="login-table">
+        <div class="table-content">
+            <table >
+                <tr>
+                    <td height="200px"><i class="space"></i><span class="login-name">账户登录</span></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>手机号码</td>
+                    <td><input id="my_tele" type="text" onblur="telshow()"></td>
+
+                </tr>
+                <tr>
+                    <td></td>
+                    <td height="50px" style="padding: 0"><span id="teleMes" style="font-size: 10px">请输入您的手机号码</span></td>
+                </tr>
+                <tr>
+                    <td>登录密码</td>
+                    <td><input id="my_upwd" type="text"></td>
+
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button onclick="login()">确认登录</button></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td height="50px" style="padding: 0"><span id="Mes" style="font-size: 10px"></span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+	
+//    输入用户名以及密码,验证数据是否存在,如果不存在,提示登录失败,如果存在,直接跳转到主界面
+    function login(){
+        if(my_upwd.value.length==0){
+            Mes.innerHTML = '密码不能为空';
+            return;
+        }
+        var fromate ='uname='+my_tele.value+'&upwd='+my_upwd.value;
+        var xhr =  new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState ==4 && xhr.status ==200){
+                var result = xhr.responseText;
+                console.log(result);
+                if(result =='1'){
+                    window.location.href='index.html';
+                }else{
+                    Mes.innerHTML = "账号或者密码错误,请重新输入";
+                }
+            }
+        }
+        xhr.open('post','/user/userlogin',true);
+        xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+        xhr.send(fromate);
+    }
+//    当输入用户名时查询数据库,验证手机号是否存在
+    function telshow(){
+        if(my_tele.value.length==0){
+            teleMes.innerHTML = '请输入您的账户';
+            return;
+        }
+      var formdata ='uname='+my_tele.value;
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState ==4 && xhr.status==200){
+                var results = xhr.responseText;
+                if(results=='2'){
+                    teleMes.innerHTML = '手机号码验证成功';
+                }else if(results=='0'){
+                    teleMes.innerHTML = '手机号码不存在,请重新输入';
+                }
+            }
+        }
+        xhr.open('post','/user/login',true);
+        xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+        xhr.send(formdata);
+    }
+</script>
+</body>
+</html>

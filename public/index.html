@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="./css/index.css" rel="stylesheet">
+</head>
+<body onload="showMes()">
+<div class="top">
+    <div class="w">
+        <div class="top-left">
+            <span> 网罗天下图书 传承中华文明 </span>
+        </div>
+        <div class="top-right">
+            <ul>
+                <li>
+                    <a href="javascript:void(0)">欢迎观临杰杰图书</a>
+                    <a class='login_message' style="color: red" href="login.html">登陆</a>
+                    <a style="color: red" href="register.html">注册</a>
+                </li>
+                <li class="space"></li>
+                <li>
+                    <i class="iconfont">&#xe60c;</i>
+                    <a href="shopcar.html">购物车</a>
+                </li>
+                <li class="space"></li>
+                <li>
+                    <a href="javascript:void(0)">我的订单</a>
+                </li>
+                <li class="space"></li>
+                <li>
+                    <i class="iconfont">&#xe6bc;</i>
+                    <a href="javascript:void(0)">个人中心</a>
+                    <i class="iconfont">&#xe6b9;</i>
+                </li>
+                <li class="space"></li>
+                <li>
+                    <i class="iconfont">&#xe652;</i>
+                    <a href="javascript:void(0)">定位</a>
+                    <i class="iconfont">&#xe6b9;</i>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="header" id="header">
+    <div class="w">
+        <div class="header-search">
+            <div class="header-form">
+                <div class="text-form" id="text-form">
+                    <input id="texts" autocomplete="off" type="text">
+                    <span>活好 我这样活到105岁</span>
+                    <i class="iconfont">&#xe672;</i>
+                </div>
+                <button class="iconfont">&#xe693;</button>
+                <div class="head-car">
+                    <div class="middel-car">
+                        <i class="iconfont">&#xe60c;</i>
+                        <a  href="javascript:" style="color: #ff230a">我的购物车</a>
+                        <span>0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="top_img">
+    <div class="w">
+        <div class="img-left">
+            <div class="left-square">
+                <ul></ul>
+            </div>
+            <div class="left-center">
+                <ul id="lunbo">
+                    <li>
+                        <a>
+                            <img alt="" src="image/lunbo_book0.jpg">
+                        </a>
+                    </li>
+
+                    <li>
+                        <a>
+                            <img alt="" src="image/lunbo_book1.jpg">
+                        </a>
+                    </li>
+
+                    <li>
+                        <a>
+                            <img alt="" src="image/lunbo_book2.jpg">
+                        </a>
+                    </li>
+
+                    <li>
+                        <a>
+                            <img alt="" src="image/lunbo_book3.jpg">
+                        </a>
+                    </li>
+
+                    <li>
+                        <a>
+                            <img alt="" src="image/lunbo_book4.jpg">
+                        </a>
+                    </li>
+
+                    <li>
+                        <a>
+                            <img alt="" src="image/lunbo_book7.jpg">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="img-right">
+            <div class="right-content">
+                <div id="topNews">
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<div class="new">
+    <div class="w">
+        <div class="new-book">
+          <i class="spaces"></i>
+          <span>新品上市</span>
+        </div>
+        <div class="fashion-book">
+            <i class="spaces"></i>
+            <span>畅销榜</span>
+        </div>
+    </div>
+</div>
+<div class="top-banner">
+    <div class="w">
+        <div class="banner-left">
+            <div class="banner-nav"><!--左上导航条-->
+                <ul id="booktypelist">
+                    <li><a href="books.html"  onmouseover="showBook('热卖')" >热卖</a></li>
+                </ul>
+               </div>
+            <div class="banner-content"><!--左下内容部分-->
+               <div id="main">
+               </div>
+            </div>
+    </div>
+        <div class="banner-right">
+            <div class="banner-navs"><!--左上导航条-->
+                <ul>
+                    <li>总榜</li>
+                    <li>价格</li>
+                    <li>销量</li>
+                </ul>
+            </div>
+            <div class="banner-book">
+                <div class="topnum-book">
+                   <ul>
+                       <li>
+                           <span style="display: none">畅销第一名</span>
+                           <a href="#">
+                           <div class="bookRank" style="display: block">
+                               <div class="bookImgg">
+                                   <img src="image/fish.jpg" alt="">
+                               </div>
+                               <i>活着</i>
+                           </div>
+                           </a>
+                       </li>
+                       <li>
+                           <span>畅销第一名</span>
+                           <a href="#">
+                               <div class="bookRank" style="display: none">
+                                   <div class="bookImgg">
+                                       <img src="image/fish.jpg" alt="">
+                                   </div>
+                                   <i>活着</i>
+                               </div>
+                           </a>
+                       </li>
+                       <li>
+                           <span>畅销第一名</span>
+                           <a href="#">
+                               <div class="bookRank" style="display: none">
+                                   <div class="bookImgg">
+                                       <img src="image/fish.jpg" alt="">
+                                   </div>
+                                   <i>活着</i>
+                               </div>
+                           </a>
+                       </li>
+                       <li>
+                           <span>畅销第一名</span>
+                           <a href="#">
+                               <div class="bookRank" style="display: none">
+                                   <div class="bookImgg">
+                                       <img src="image/fish.jpg" alt="">
+                                   </div>
+                                   <i>活着</i>
+                               </div>
+                           </a>
+                       </li>
+                       <li>
+                           <span>畅销第一名</span>
+                           <a href="#">
+                               <div class="bookRank" style="display: none">
+                                   <div class="bookImgg">
+                                       <img src="image/fish.jpg" alt="">
+                                   </div>
+                                   <i>活着</i>
+                               </div>
+                           </a>
+                       </li>
+                   </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="jquery-1.11.1.js"></script>
+<script>
+    function showMes(){
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState ==4 && xhr.status==200) {
+                var result = xhr.responseText;
+                // console.log(result);
+                if (result.length != 0) {
+                    var res = JSON.parse(result);
+                    topNews.innerHTML += "<span>爱书，爱生活</span><br>" +
+                        "<i>小店昵称：</i><i>" + res.bookstore_name + "</i><br>" +
+                        "<i >小店日期：</i><i style='color: yellow'>" + res.bookstore_time + "</i><br><br>" +
+                        "<i>店主大名：</i><i style='color: red'>" + res.bookstore_own + "</i><br>" +
+                        "<i>店主联系方式：</i><i>" + res.bookstore_telep + "</i><br><br>" +
+                        "<i>书店简介：</i>" +
+                        "<i class='store-content'>" + res.bookstore_desc + "</i><br>"
+                }else{
+                    topNews.innerHTML='';
+                }
+          }
+        }
+        xhr.open('get','/book/bookMes',true);
+        xhr.send();
+
+        var xhrs = new XMLHttpRequest();
+        xhrs.onreadystatechange = function () {
+            if(xhrs.readyState==4 && xhrs.status==200){
+                var result = xhrs.responseText;
+                result = JSON.parse(result);
+                // console.log(result);
+                if(result.length!=0){
+                    for(var i=0;i<result.length;i++) {
+                        main.innerHTML += ' <div class="book">' +
+                            '<div class="book-img"> ' +
+                            '<img src="' + result[i].book_img + '"> ' +
+                            '</div>' +
+                            '<div class="book-name">' + result[i].b_name +
+                            '</div>' +
+                            '<div class="bookprice">' +
+                            '<i class="price">' + result[i].b_price + '</i>' +
+                            '</div>' +
+                            '</div>';
+                    }
+                }else{
+                    main.innerHTML='';
+                }
+            }
+        }
+        xhrs.open('get','/book/boodesc?bookstyle=1',true);
+        xhrs.send();
+
+        var  xhrss = new XMLHttpRequest();
+        xhrss.onreadystatechange = function () {
+            if(xhrss.readyState ==4 && xhrss.status==200){
+                var result = xhrss.responseText;
+                console.log(result);
+                result = JSON.parse(result);
+                for(var i=0;i<result.length;i++){
+                    booktypelist.innerHTML+="<li><a href='#'  onmouseover=showBook('"+result[i].b_type+"')>"+result[i].b_type+"</a></li>";
+                }
+            }
+        }
+        xhrss.open('get','/book/booktype',true);
+        xhrss.send();
+    }
+    function showBook(bookstyle){
+        main.innerHTML='';
+        var xhr = new XMLHttpRequest();
+       xhr.onreadystatechange = function () {
+           if(xhr.readyState==4 && xhr.status==200){
+               var result = xhr.responseText;
+               result = JSON.parse(result);
+               if(result.length!=0){
+               for(var i=0;i<result.length;i++) {
+                   main.innerHTML += ' <div class="book">' +
+                       '<div class="book-img"> ' +
+                       '<img src="' + result[i].book_img + '"> ' +
+                       '</div>' +
+                       '<div class="book-name">' + result[i].b_name +
+                       '</div>' +
+                       '<div class="bookprice">' +
+                       '<i class="price">' + result[i].b_price + '</i>' +
+                       '</div>' +
+                       '</div>';
+               }
+               }else{
+                   main.innerHTML='';
+               }
+           }
+       }
+       xhr.open('get','/book/boodesc?bookstyle='+bookstyle,true);
+       xhr.send();
+    }
+    $(document).ready(function () {
+        var baner=document.querySelector(".topnum-book");
+        var bookRank=document.querySelector(".bookRank");
+       $(".topnum-book span").click ( function () {
+           $(this).hide().parent('li').siblings('li').children('span').show();
+           $(this).next().children().eq(0).show();
+           $(this).parent().siblings().children('a').children('.bookRank').hide();
+       })
+    });
+     $(document).ready(function () {
+         var timer1=0;
+         var Arr=['活好 我这样活到105岁','麦克尤恩：时间中的孩子','梦的化石：今敏全短篇','偷书贼'];
+         i=0;
+          timer1=setInterval(spanFunction,5000);
+              function  spanFunction(){
+             i++;
+             if (i>Arr.length)
+             {
+                 i=0;
+             }
+            $('.text-form').children('span').text(Arr[i]);// $('text-form').children('span').html=Arr[i];
+         }
+
+         $('.text-form').children('input').focus(function () {
+             clearInterval(timer1);
+             $('.text-form').children('span').text(' ');
+         });
+
+         $('.text-form').children('input').blur(function () {
+             if ( $('.text-form').children('input').text().length===0)
+             {
+                 timer1=setInterval(spanFunction,5000);
+                 $('.text-form').children('span').text('活好 我这样活到105岁');
+             }
+         });
+
+     })
+    $(function () {
+        var imgLeft= $('.img-left');
+        var ulList= $('.left-center > ul');
+        var ul=document.getElementById("lunbo");
+        var li = $('.left-center>ul>li');
+        var newli=ulList.children("li").eq(0).clone();
+        ulList.append(newli);
+        var str = "";
+        for (var i =0;i < li.length; i++){
+            str=$("<li>"+(i+1)+"</li>");
+            $('.left-square').children("ul").append(str);
+        }
+        var k=0;
+        var suqare=0;
+        var timer=0;
+        $('.left-square>ul>li').eq(0).addClass("col-red");
+         timer=setInterval(fn,2000);
+
+
+          function fn() {
+            suqare++;
+            if (suqare>$(".left-center>ul>li").length-2)
+            {
+                suqare=0;
+            }
+            $('.left-square>ul>li').eq(suqare).addClass("col-red").siblings().removeClass("col-red")
+
+            k++;
+            if (k>$(".left-center>ul>li").length-1)
+            {
+                $(".left-center>ul").css("left",0);
+                k=1;
+            }
+            $(".left-center>ul").animate({"left":-k*($('.left-center').width())},1000);
+        }
+
+
+
+        $('.left-square>ul>li').mouseover(function () {
+            clearInterval(timer);
+            $(this).addClass("col-red").siblings().removeClass("col-red");
+            $(".left-center>ul").animate({"left":-($(this).text())*($('.left-center').width())},100);
+
+        })
+        $('.left-square>ul>li').mouseout(function () {
+            timer=setInterval(fn,2000);
+            k=$(this).text();
+            suqare=$(this).text()-1;
+            // console.log( $(this).text());
+        })
+
+    });
+</script>
+</body>
+</html>

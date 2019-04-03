@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script rel="stylesheet" src="js/jquery-3.3.1.js"></script>
+    <script rel="stylesheet" src="js/popper.min.js"></script>
+    <script rel="stylesheet" src="js/bootstrap.min.js"></script>
+    <style>
+        li{list-style: none;}
+    </style>
+</head>
+<body onload="showMes()">
+<div class="top">
+    <div class="w">
+        <div class="top-left">
+            <span> <a href="index.html">网罗天下图书 传承中华文明</a> </span>
+        </div>
+        <div class="top-right">
+            <ul>
+                <li>
+                    <a href="javascript:void(0)">欢迎观临杰杰图书</a>
+                    <a class='login_message' style="color: red" href="javascript:void(0)">登陆</a>
+                    <a style="color: red" href="register.html">注册</a>
+                </li>
+                <li class="space"></li>
+                <li>
+                    <i class="iconfont">&#xe60c;</i>
+                    <a href="shopcar.html">购物车</a>
+                </li>
+                <li class="space"></li>
+                <li>
+                    <a href="javascript:void(0)">我的订单</a>
+                </li>
+                <li class="space"></li>
+                <li>
+                    <i class="iconfont">&#xe6bc;</i>
+                    <a href="javascript:void(0)">个人中心</a>
+                    <i class="iconfont">&#xe6b9;</i>
+                </li>
+                <li class="space"></li>
+                <li>
+                    <i class="iconfont">&#xe652;</i>
+                    <a href="javascript:void(0)">定位</a>
+                    <i class="iconfont">&#xe6b9;</i>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="header" id="header">
+    <div class="w">
+        <div class="header-search">
+            <div class="header-form">
+                <div class="text-form" id="text-form">
+                    <input id="texts" autocomplete="off" type="text">
+                    <span>活好 我这样活到105岁</span>
+                    <i class="iconfont">&#xe672;</i>
+                </div>
+                <button class="iconfont">&#xe693;</button>
+                <div class="head-car">
+                    <div class="middel-car">
+                        <i class="iconfont">&#xe60c;</i>
+                        <a  href="javascript:" style="color: #ff230a">我的购物车</a>
+                        <span>0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="book-banner-nav ">
+    <div class="banner-nav"><!--左上导航条-->
+        <div class=" d-flex justify-content-start">
+            <ul class="nav nav-tabs" id="booktypelist">
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="all-books tab-content" name="books" id="allBooks">
+
+</div>
+<script src="jquery-1.11.1.js"></script>
+<script>
+//    2019-2-12本来想的是将书本的类型保存在数组中,直接用数组查找有关书,但是不知道为什么数组获取不到书的列表
+    var booktypes = [];
+    function showMes() {
+        var xhrss = new XMLHttpRequest();
+        xhrss.onreadystatechange = function () {
+            if (xhrss.readyState == 4 && xhrss.status == 200) {
+                var result = xhrss.responseText;
+                result = JSON.parse(result);
+                for (var i = 0; i < result.length; i++) {
+                    booktypelist.innerHTML += "<li class='align-items-center nav-item'><a class='nav-link' data-toggle='tab' href='#d" + i + "' >" + result[i].b_type + "</a></li>";
+                    booktypes.push(result[i].b_type);
+                }
+                for(var j=0;j<booktypes.length;j++){
+                    reset(booktypes[j],j);
+                }
+            }
+        }
+        xhrss.open('get', '/book/booktype', true);
+        xhrss.send();
+    }
+    function reset(j,index){
+        var xhr = new XMLHttpRequest();
+        var str='<div class="tab-pane " id="d'+index+'">';
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var result = xhr.responseText;
+                result = JSON.parse(result);
+                for (var i = 0; i < result.length; i++) {
+                    str += '<div class="book row"><div class="col-6"><div class="book-img"> <img src="' + result[i].book_img + '"></div></div><div class="col-6 d-flex flex-column"><div class="book-name pt-4">' + result[i].b_name + ' </div><div class="bookauthor pt-2">' + result[i].b_author + '</div> <div class="booksys pt-2 text-truncate">' + result[i].b_desc + '</div><div class="bookprice pt-2"><i class="price">' + result[i].b_price + '</i></div><input class="insert-car pt-1" type="submit" value="加入购物车"></div></div>';
+
+                }
+                str+="</div>"
+                allBooks.innerHTML+=str;
+            }
+        }
+        xhr.open('get', '/book/boodesc?bookstyle=' + j, true);
+        xhr.send();
+     }
+    $(document).ready(function () {
+        $(".banner-nav").children('ul').children('li').click(function () {
+            $(this).addClass("active").siblings().removeClass("active");
+            $('.banner-content').children('div').eq($(this).index()).addClass("selected").siblings().removeClass("selected");
+        })
+    })
+
+</script>
+</body>
+</html>

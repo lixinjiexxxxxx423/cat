@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script rel="stylesheet" src="js/jquery-3.3.1.js"></script>
+    <script rel="stylesheet" src="js/popper.min.js"></script>
+    <script rel="stylesheet" src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="top">
+    <div class="w">
+        <div class="top-left">
+            <span><a href="index.html">  网罗天下图书 传承中华文明</a> </span>
+        </div>
+        <div class="top-right">
+            <ul>
+                <li>
+                    <a href="javascript:void(0)">欢迎观临杰杰图书</a>
+                    <a class='login_message' style="color: red" href="javascript:void(0)">登陆</a>
+                    <a style="color: red" href="register.html">注册</a>
+                </li>
+                <li class="space"></li>
+                <li>
+                    <i class="iconfont">&#xe60c;</i>
+                    <a href="shopcar.html">购物车</a>
+                </li>
+                <li class="space"></li>
+                <li>
+                    <a href="javascript:void(0)">我的订单</a>
+                </li>
+                <li class="space"></li>
+                <li>
+                    <i class="iconfont">&#xe6bc;</i>
+                    <a href="javascript:void(0)">个人中心</a>
+                    <i class="iconfont">&#xe6b9;</i>
+                </li>
+                <li class="space"></li>
+                <li>
+                    <i class="iconfont">&#xe652;</i>
+                    <a href="javascript:void(0)">定位</a>
+                    <i class="iconfont">&#xe6b9;</i>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="header" id="header">
+    <div class="w">
+        <div class="header-search">
+            <div class="header-form">
+                <div class="text-form" id="text-form">
+                    <input id="texts" autocomplete="off" type="text">
+                    <span>活好 我这样活到105岁</span>
+                    <i class="iconfont">&#xe672;</i>
+                </div>
+                <button class="iconfont">&#xe693;</button>
+                <div class="head-car">
+                    <div class="middel-car">
+                        <i class="iconfont">&#xe60c;</i>
+                        <a  href="javascript:" style="color: #ff230a">我的购物车</a>
+                        <span>0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="line">
+    <div class="w">
+        <div class="space">
+
+        </div>
+    </div>
+</div>
+<div class="mian-book">
+    <div class="books">
+        <div class="book-img">
+            <img src="image/life.jpg" alt="">
+        </div>
+        <div class="book-name">
+            活着
+        </div>
+        <div class="bookauthor">
+            于淑华
+        </div>
+        <div class="bookpublic">
+            作家出版社
+        </div>
+        <div class="booktimer">
+            2012年08月
+        </div>
+        <div class="booksys">
+            《活着》是一部充满血泪的小说。余华通过一位中国农民的苦难生活 讲述了人如何去承受巨大的苦难；讲述了眼泪的丰富和宽广；讲述了*望 的不存在：讲述了人是为了活着本身而活着
+            《活着》是一部充满血泪的小说。余华通过一位中国农民的苦难生活 讲述了人如何去承受巨大的苦难；讲述了眼泪的丰富和宽广；讲述了*望 的不存在：讲述了人是为了活着本身而活着
+            《活着》是一部充满血泪的小说。余华通过一位中国农民的苦难生活 讲述了人如何去承受巨大的苦难；讲述了眼泪的丰富和宽广；讲述了*望 的不存在：讲述了人是为了活着本身而活着
+            《活着》是一部充满血泪的小说。余华通过一位中国农民的苦难生活 讲述了人如何去承受巨大的苦难；讲述了眼泪的丰富和宽广；讲述了*望 的不存在：讲述了人是为了活着本身而活着
+        </div>
+
+        <div class="bookprice">
+            <i class="price">￥37.10</i><del>￥40</del>
+        </div>
+        <form action="">
+            <input class="telep" type="hidden" name="telephone" value="null">
+            <input class="insert-car" type="submit" value="加入购物车">
+            <div class="book-submit">添加成功</div>
+        </form>
+    </div>
+</div>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $(function () {
+        var insert = document.querySelector(".insert-car");
+        var addbooks = document.querySelector(".book-submit");
+        alert($(".telep").val());
+        if($(".telep").val()!=="null")
+        {
+            $(insert).click(function () {
+                alert("添加成功")
+            });
+        }
+    });
+
+</script>
+</body>
+</html>

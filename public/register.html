@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="./css/index.css" rel="stylesheet">
+    <style>
+        body {
+             background: #ffffce;
+            /*background: url("image/search-none.png")  ;*/
+        }
+        .top-bann {
+            width: 100%;
+            height: 60px;
+            background-color: blanchedalmond;
+        }
+        .top-bann i {
+            color: red;
+            font-size: 40px;
+
+        }
+        .top-bann span {
+            font-size: 40px;
+            line-height: 60px;
+            padding-left: 40px;
+        }
+        .top-bann h1{
+            line-height: 60px;
+            float: right;
+            font-size: 16px;
+        }
+        .top-banners {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            float: right;
+        }
+        .register-table {
+            position: absolute;
+            top:100px;
+            right: 270px;
+        }
+        .icon {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            left:250px;
+            top:180px;
+            background: url("image/search-none.png");
+        }
+        input {
+            line-height: 20px;
+            width: 310px;
+            height: 36px;
+            border-radius: 4px;
+            font-size: 20px;
+            border: 1px solid #666;
+        }
+        button {
+            margin: 10px 0 0 138px;
+            width: 200px;
+            height: 36px;
+            border-radius: 26px;
+            border: 1px solid #666;
+            background-color: red;
+            font-size: 20px;
+            color: white;
+        }
+        td {
+            padding: 10px;
+            text-align: right;
+        }
+        span {
+            display: inline-block;
+            width: 254px;
+            height: 18px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<div class="top-banners">
+    <div class="top-bann">
+        <div class="w">
+            <i class="iconfont">&#xe6c6;</i>
+            <span>welcome!</span>
+            <h1>已有账号，点击此处，
+              <a  style="color: red" href="login.html">登录</a>
+            </h1>
+        </div>
+    </div>
+   <div class="w">
+       <div class="icon">
+       </div>
+       <div class="register-table">
+           <table>
+               <tbody class="re-table">
+               <tr>
+                   <td> 手机号码 </td>
+                   <td>  <input class="textss" id="telep" type="text" onblur="checkTel()"> </td>
+               </tr>
+               <tr>
+                   <td></td>
+                    <td>
+                       <i class="iconfont">&#xe6eb;</i>
+                       <span id="teleMes">请输入您的手机号，格式：184******** </span>
+                    </td>
+               </tr>
+               <tr>
+                   <td> 密码 </td>
+                   <td>  <input  class="password" type="text" id="passwords" onblur="checkPass()"> </td>
+               </tr>
+
+               <tr>
+                   <td></td>
+                   <td>
+                       <i class="iconfont">&#xe6eb;</i>
+                       <span id="passMess">请输入您密码，字母+数字（6-18） </span>
+                   </td>
+               </tr>
+
+               <tr>
+                   <td> 确认密码 </td>
+                   <td>  <input  class="againpassword"  id="againpassword" type="text" onblur="checkAgain()"> </td>
+               </tr>
+
+               <tr>
+                   <td></td>
+                   <td>
+                       <i class="iconfont">&#xe6eb;</i>
+                       <span id="passMes">请再次输入您密码！ </span>
+                   </td>
+               </tr>
+               </tbody>
+           </table>
+           <button onclick="subMes()">确认提交</button>
+       </div>
+   </div>
+</div>
+<script>
+    var bool=true;
+     function checkTel(){
+         var tel = telep.value;
+        if (/^((13[0-9])|(15[^4,\D])|(18[0-9]))\d{8}$/.test(tel)){
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if(xhr.readyState ==4 && xhr.status ==200){
+                    var result = xhr.responseText;
+                    if(result=='2'){
+                        teleMes.innerHTML = '手机号码已经存在,请登录,或者重新输入';
+                        bool=false;
+                    }else{
+                        teleMes.innerHTML = '手机号码格式正确';
+                        bool=true;
+                    }
+                }
+            }
+            tel = 'uname='+tel;
+            xhr.open('post','/user/login',true);
+            xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+            xhr.send(tel);
+        }else{
+            teleMes.innerHTML = '请输入正确的格式：184********';
+        }
+    }
+    function checkPass(){
+        var pass = passwords.value;
+        if(pass.length>=8 && pass.length<=16){
+            passMess.innerHTML='密码输入成功';
+            bool=true;
+        }else{
+            passMess.innerHTML='密码输入格式不正确,请重新输入8-16位';
+            bool=false;
+        }
+    }
+    function checkAgain(){
+        var aginpass=againpassword.value ;
+        var pass = passwords.value;
+        if(aginpass===pass ){
+            passMes.innerHTML='密码一致';
+            bool=true;
+        }else{
+            passMes.innerHTML='两次密码不一致,请重新输入';
+            bool=false;
+            aginpass.value='';
+        }
+    }
+    function subMes(){
+        var tel = telep.value;
+        var pass = passwords.value;
+        var formata = 'u_telep='+tel+'&u_pwd='+pass;
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState ==4 && xhr.status==200){
+                var result = xhr.responseText;
+                if(result=='1'){
+                    alert('注册成功');
+                }else{
+                    alert('注册失败')
+                }
+            }
+        }
+        xhr.open('post','/user/reg',true);
+        xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+        xhr.send(formata);
+    }
+</script>
+</body>
+</html>
